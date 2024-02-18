@@ -18,7 +18,7 @@ Nous allons installer un cluster Cassandra à 6 nœuds et 2 Datacenter sur un en
 
 ### 1b°) Lancement du cluster (option 2) :
 
-    docker compose up -f docker-compose-01-06.yml    
+    docker compose -f docker-compose-01-06.yml up -d    
 
 ###	2°) Pour lister l'image récupérée  :
 
