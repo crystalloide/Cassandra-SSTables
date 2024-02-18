@@ -1,0 +1,186 @@
+version: "3.8"
+services:
+  cassandra11:
+    image: cassandra:4.1
+    hostname: cassandra11
+    mem_limit: 1g
+    cpus: 0.5
+    restart: always
+    volumes:
+      - cassandra11:/var/lib/cassandra
+    environment:
+      - CASSANDRA_CLUSTER_NAME=formation
+      - CASSANDRA_SEEDS=cassandra11,cassandra21
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - CASSANDRA_DC=Nord
+      - CASSANDRA_RACK=Winterfell1
+      - CASSANDRA_BROADCAST_RPC_ADDRESS=127.0.0.1
+      - CASSANDRA_NATIVE_TRANSPORT_PORT=9042
+      - MAX_HEAP_SIZE=256m
+      - HEAP_NEWSIZE=50m  
+    ports:
+      - "9042:9042"
+    healthcheck:
+      test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+
+  cassandra12:
+    depends_on:
+      cassandra11:
+        condition: service_healthy
+    image: cassandra:4.1
+    hostname: cassandra12
+    mem_limit: 1g
+    cpus: 0.5
+    restart: always    
+    volumes:    
+      - cassandra12:/var/lib/cassandra
+    environment:
+      - CASSANDRA_CLUSTER_NAME=formation
+      - CASSANDRA_SEEDS=cassandra11,cassandra21
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - CASSANDRA_DC=Nord
+      - CASSANDRA_RACK=Winterfell2
+      - CASSANDRA_BROADCAST_RPC_ADDRESS=127.0.0.1
+      - CASSANDRA_NATIVE_TRANSPORT_PORT=9043
+      - MAX_HEAP_SIZE=256m
+      - HEAP_NEWSIZE=50m  
+    ports:
+      - "9043:9043"
+    healthcheck:
+      test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+
+  cassandra13:
+    depends_on:
+      cassandra12:
+        condition: service_healthy
+    image: cassandra:4.1
+    hostname: cassandra13
+    mem_limit: 1g
+    cpus: 0.5
+    restart: always
+    volumes:
+      - cassandra13:/var/lib/cassandra
+    environment:
+      - CASSANDRA_CLUSTER_NAME=formation
+      - CASSANDRA_SEEDS=cassandra11,cassandra21
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - CASSANDRA_DC=Nord
+      - CASSANDRA_RACK=Winterfell3
+      - CASSANDRA_BROADCAST_RPC_ADDRESS=127.0.0.1
+      - CASSANDRA_NATIVE_TRANSPORT_PORT=9044
+      - MAX_HEAP_SIZE=256m
+      - HEAP_NEWSIZE=50m  
+    ports:
+      - "9044:9044"
+    healthcheck:
+      test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+
+  cassandra21:
+    depends_on:
+      cassandra13:
+        condition: service_healthy  
+    image: cassandra:4.1
+    hostname: cassandra21
+    mem_limit: 1g
+    cpus: 0.5
+    restart: always
+    volumes:
+      - cassandra21:/var/lib/cassandra
+    environment:
+      - CASSANDRA_CLUSTER_NAME=formation
+      - CASSANDRA_SEEDS=cassandra11,cassandra21
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - CASSANDRA_DC=Terres-de-la-Couronne
+      - CASSANDRA_RACK=Port-Real1
+      - CASSANDRA_BROADCAST_RPC_ADDRESS=127.0.0.1
+      - CASSANDRA_NATIVE_TRANSPORT_PORT=9045
+      - MAX_HEAP_SIZE=256m
+      - HEAP_NEWSIZE=50m  
+    ports:
+      - "9045:9045"
+    healthcheck:
+      test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+
+  cassandra22:
+    depends_on:
+      cassandra21:
+        condition: service_healthy  
+    image: cassandra:4.1
+    hostname: cassandra22
+    mem_limit: 1g
+    cpus: 0.5
+    restart: always
+    volumes:
+      - cassandra22:/var/lib/cassandra
+    environment:
+      - CASSANDRA_CLUSTER_NAME=formation
+      - CASSANDRA_SEEDS=cassandra11,cassandra21
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - CASSANDRA_DC=Terres-de-la-Couronne
+      - CASSANDRA_RACK=Port-Real2
+      - CASSANDRA_BROADCAST_RPC_ADDRESS=127.0.0.1
+      - CASSANDRA_NATIVE_TRANSPORT_PORT=9046
+      - MAX_HEAP_SIZE=256m
+      - HEAP_NEWSIZE=50m  
+    ports:
+      - "9046:9046"
+    healthcheck:
+      test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+
+  cassandra23:
+    depends_on:
+      cassandra22:
+        condition: service_healthy  
+    image: cassandra:4.1
+    hostname: cassandra23
+    mem_limit: 1g
+    cpus: 0.5
+    restart: always
+    volumes:
+      - cassandra23:/var/lib/cassandra
+    environment:
+      - CASSANDRA_CLUSTER_NAME=formation
+      - CASSANDRA_SEEDS=cassandra11,cassandra21
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - CASSANDRA_DC=Terres-de-la-Couronne
+      - CASSANDRA_RACK=Port-Real3
+      - CASSANDRA_BROADCAST_RPC_ADDRESS=127.0.0.1
+      - CASSANDRA_NATIVE_TRANSPORT_PORT=9047
+      - MAX_HEAP_SIZE=256m
+      - HEAP_NEWSIZE=50m  
+    ports:
+      - "9047:9047"
+    healthcheck:
+      test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+
+volumes:
+  cassandra11:
+  cassandra12:
+  cassandra13:
+  cassandra21:
+  cassandra22:
+  cassandra23:
