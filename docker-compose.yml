@@ -26,7 +26,9 @@ services:
     ports:
       - "9042:9042"
     healthcheck:
-      test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
+      #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9042" ]  
+      #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -58,7 +60,9 @@ services:
     ports:
       - "9043:9043"
     healthcheck:
-      test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
+      #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9043" ]  
+      #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -90,7 +94,9 @@ services:
     ports:
       - "9044:9044"
     healthcheck:
-      test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
+      #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9044" ]  
+      #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -122,7 +128,9 @@ services:
     ports:
       - "9045:9045"
     healthcheck:
-      test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
+      #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9045" ]  
+      #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -154,7 +162,9 @@ services:
     ports:
       - "9046:9046"
     healthcheck:
-      test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
+      #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9046" ]  
+      #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -186,7 +196,9 @@ services:
     ports:
       - "9047:9047"
     healthcheck:
-      test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
+      #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9047" ]  
+      #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
       interval: 10s
       timeout: 5s
       retries: 5
