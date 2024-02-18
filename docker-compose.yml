@@ -46,6 +46,7 @@ services:
     restart: always    
     volumes:    
       - cassandra12:/var/lib/cassandra
+      #- "/home/user/cassandra12/data:/var/lib/cassandra:rw"
     environment:
       - CASSANDRA_CLUSTER_NAME=ClusterFormation
       - CASSANDRA_NUM_TOKENS=16  
@@ -80,6 +81,7 @@ services:
     restart: always
     volumes:
       - cassandra13:/var/lib/cassandra
+      #- "/home/user/cassandra13/data:/var/lib/cassandra:rw"
     environment:
       - CASSANDRA_CLUSTER_NAME=ClusterFormation
       - CASSANDRA_NUM_TOKENS=16  
@@ -114,6 +116,7 @@ services:
     restart: always
     volumes:
       - cassandra21:/var/lib/cassandra
+      #- "/home/user/cassandra21/data:/var/lib/cassandra:rw"
     environment:
       - CASSANDRA_CLUSTER_NAME=ClusterFormation
       - CASSANDRA_NUM_TOKENS=16  
@@ -148,6 +151,7 @@ services:
     restart: always
     volumes:
       - cassandra22:/var/lib/cassandra
+      #- "/home/user/cassandra22/data:/var/lib/cassandra:rw"
     environment:
       - CASSANDRA_CLUSTER_NAME=ClusterFormation
       - CASSANDRA_NUM_TOKENS=16  
@@ -182,6 +186,7 @@ services:
     restart: always
     volumes:
       - cassandra23:/var/lib/cassandra
+      #- "/home/user/cassandra23/data:/var/lib/cassandra:rw"
     environment:
       - CASSANDRA_CLUSTER_NAME=ClusterFormation
       - CASSANDRA_NUM_TOKENS=16  
