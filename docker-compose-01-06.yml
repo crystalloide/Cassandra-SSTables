@@ -1,0 +1,212 @@
+version: "3.8"
+services:
+  cassandra01:
+    image: cassandra:4.1
+    container_name: cassandra01
+    hostname: cassandra01
+    mem_limit: 1g
+    restart: always
+    volumes:
+      - cassandra01:/var/lib/cassandra      
+      #- "/home/user/cassandra01:/etc/cassandra:rw" 
+      #- "d:\cassandra01_data:/var/lib/cassandra:rw"   
+      #- "/home/user/cassandra01/data:/var/lib/cassandra:rw"
+    environment:
+      - CASSANDRA_CLUSTER_NAME=Cluster_Formation
+      - CASSANDRA_NUM_TOKENS=16   
+      - CASSANDRA_SEEDS=cassandra01,cassandra02
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - CASSANDRA_DC=WINTERFELL
+      - CASSANDRA_RACK=RACK1
+      - CASSANDRA_BROADCAST_RPC_ADDRESS=127.0.0.1
+      - CASSANDRA_NATIVE_TRANSPORT_PORT=9042
+      - MAX_HEAP_SIZE=256m
+      - HEAP_NEWSIZE=50m  
+    ports:
+      - "9042:9042"
+    healthcheck:
+      #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9042" ]  
+      #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+      #start_period: 60s
+
+  cassandra02:
+    depends_on:
+      cassandra01:
+        condition: service_healthy
+    image: cassandra:4.1
+    container_name: cassandra02
+    hostname: cassandra02
+    mem_limit: 1g
+    restart: always
+    volumes:
+      - cassandra02:/var/lib/cassandra
+      #- "/home/user/cassandra02/data:/var/lib/cassandra:rw"
+    environment:
+      - CASSANDRA_CLUSTER_NAME=Cluster_Formation
+      - CASSANDRA_NUM_TOKENS=16   
+      - CASSANDRA_SEEDS=cassandra01,cassandra02
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - CASSANDRA_DC=TERRES-DE-LA-COURONNE
+      - CASSANDRA_RACK=RACK1
+      - CASSANDRA_BROADCAST_RPC_ADDRESS=127.0.0.1
+      - CASSANDRA_NATIVE_TRANSPORT_PORT=9043
+      - MAX_HEAP_SIZE=256m
+      - HEAP_NEWSIZE=50m  
+    ports:
+      - "9043:9043"
+    healthcheck:
+      #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9042" ]  
+      #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+      #start_period: 60s
+
+  cassandra03:
+    depends_on:
+      cassandra02:
+        condition: service_healthy
+    image: cassandra:4.1
+    container_name: cassandra03
+    hostname: cassandra03
+    mem_limit: 1g
+    restart: always
+    volumes:
+      - cassandra03:/var/lib/cassandra
+      #- "/home/user/cassandra03/data:/var/lib/cassandra:rw"
+    environment:
+      - CASSANDRA_CLUSTER_NAME=Cluster_Formation
+      - CASSANDRA_NUM_TOKENS=16   
+      - CASSANDRA_SEEDS=cassandra01,cassandra02
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - CASSANDRA_DC=WINTERFELL
+      - CASSANDRA_RACK=RACK2
+      - CASSANDRA_BROADCAST_RPC_ADDRESS=127.0.0.1
+      - CASSANDRA_NATIVE_TRANSPORT_PORT=9044
+      - MAX_HEAP_SIZE=256m
+      - HEAP_NEWSIZE=50m  
+    ports:
+      - "9044:9044"
+    healthcheck:
+      #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9042" ]  
+      #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+      #start_period: 60s
+
+  cassandra04:
+    depends_on:
+      cassandra03:
+        condition: service_healthy
+    image: cassandra:4.1
+    container_name: cassandra04
+    hostname: cassandra04
+    mem_limit: 1g
+    restart: always
+    volumes:
+      - cassandra04:/var/lib/cassandra
+      #- "/home/user/cassandra04/data:/var/lib/cassandra:rw"
+    environment:
+      - CASSANDRA_CLUSTER_NAME=Cluster_Formation
+      - CASSANDRA_NUM_TOKENS=16   
+      - CASSANDRA_SEEDS=cassandra01,cassandra02
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - CASSANDRA_DC=TERRES-DE-LA-COURONNE
+      - CASSANDRA_RACK=RACK2
+      - CASSANDRA_BROADCAST_RPC_ADDRESS=127.0.0.1
+      - CASSANDRA_NATIVE_TRANSPORT_PORT=9045
+      - MAX_HEAP_SIZE=256m
+      - HEAP_NEWSIZE=50m  
+    ports:
+      - "9045:9045"
+    healthcheck:
+      #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9042" ]  
+      #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+      #start_period: 60s
+
+  cassandra05:
+    depends_on:
+      cassandra04:
+        condition: service_healthy
+    image: cassandra:4.1
+    container_name: cassandra05
+    hostname: cassandra05
+    mem_limit: 1g
+    restart: always
+    volumes:
+      - cassandra05:/var/lib/cassandra
+      #- "/home/user/cassandra05/data:/var/lib/cassandra:rw"
+    environment:
+      - CASSANDRA_CLUSTER_NAME=Cluster_Formation
+      - CASSANDRA_NUM_TOKENS=16   
+      - CASSANDRA_SEEDS=cassandra01,cassandra02
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - CASSANDRA_DC=WINTERFELL
+      - CASSANDRA_RACK=RACK3
+      - CASSANDRA_BROADCAST_RPC_ADDRESS=127.0.0.1
+      - CASSANDRA_NATIVE_TRANSPORT_PORT=9046
+      - MAX_HEAP_SIZE=256m
+      - HEAP_NEWSIZE=50m  
+    ports:
+      - "9046:9046"
+    healthcheck:
+      #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9042" ]  
+      #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+      #start_period: 60s
+
+  cassandra06:
+    depends_on:
+      cassandra05:
+        condition: service_healthy
+    image: cassandra:4.1
+    container_name: cassandra06
+    hostname: cassandra06
+    mem_limit: 1g
+    restart: always
+    volumes:
+      - cassandra06:/var/lib/cassandra
+      #- "/home/user/cassandra06/data:/var/lib/cassandra:rw"
+    environment:
+      - CASSANDRA_CLUSTER_NAME=Cluster_Formation
+      - CASSANDRA_NUM_TOKENS=16   
+      - CASSANDRA_SEEDS=cassandra01,cassandra02
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - CASSANDRA_DC=TERRES-DE-LA-COURONNE
+      - CASSANDRA_RACK=RACK3
+      - CASSANDRA_BROADCAST_RPC_ADDRESS=127.0.0.1
+      - CASSANDRA_NATIVE_TRANSPORT_PORT=9047
+      - MAX_HEAP_SIZE=256m
+      - HEAP_NEWSIZE=50m  
+    ports:
+      - "9047:9047"
+    healthcheck:
+      #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9042" ]   
+      #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+      #start_period: 60s
+
+volumes:
+  cassandra01:
+  cassandra02:
+  cassandra03:
+  cassandra04:
+  cassandra05:
+  cassandra06:
