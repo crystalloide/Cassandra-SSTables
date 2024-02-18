@@ -13,7 +13,7 @@ services:
       #- "d:\cassandra11_data:/var/lib/cassandra:rw"   
       #- "/home/user/cassandra11/data:/var/lib/cassandra:rw"
     environment:
-      - CASSANDRA_CLUSTER_NAME=formation
+      - CASSANDRA_CLUSTER_NAME=ClusterFormation
       - CASSANDRA_NUM_TOKENS=16  
       - CASSANDRA_SEEDS=cassandra11,cassandra21
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
@@ -47,7 +47,7 @@ services:
     volumes:    
       - cassandra12:/var/lib/cassandra
     environment:
-      - CASSANDRA_CLUSTER_NAME=formation
+      - CASSANDRA_CLUSTER_NAME=ClusterFormation
       - CASSANDRA_NUM_TOKENS=16  
       - CASSANDRA_SEEDS=cassandra11,cassandra21
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
@@ -81,7 +81,7 @@ services:
     volumes:
       - cassandra13:/var/lib/cassandra
     environment:
-      - CASSANDRA_CLUSTER_NAME=formation
+      - CASSANDRA_CLUSTER_NAME=ClusterFormation
       - CASSANDRA_NUM_TOKENS=16  
       - CASSANDRA_SEEDS=cassandra11,cassandra21
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
@@ -115,7 +115,7 @@ services:
     volumes:
       - cassandra21:/var/lib/cassandra
     environment:
-      - CASSANDRA_CLUSTER_NAME=formation
+      - CASSANDRA_CLUSTER_NAME=ClusterFormation
       - CASSANDRA_NUM_TOKENS=16  
       - CASSANDRA_SEEDS=cassandra11,cassandra21
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
@@ -149,7 +149,7 @@ services:
     volumes:
       - cassandra22:/var/lib/cassandra
     environment:
-      - CASSANDRA_CLUSTER_NAME=formation
+      - CASSANDRA_CLUSTER_NAME=ClusterFormation
       - CASSANDRA_NUM_TOKENS=16  
       - CASSANDRA_SEEDS=cassandra11,cassandra21
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
@@ -183,7 +183,7 @@ services:
     volumes:
       - cassandra23:/var/lib/cassandra
     environment:
-      - CASSANDRA_CLUSTER_NAME=formation
+      - CASSANDRA_CLUSTER_NAME=ClusterFormation
       - CASSANDRA_NUM_TOKENS=16  
       - CASSANDRA_SEEDS=cassandra11,cassandra21
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
