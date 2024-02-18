@@ -12,9 +12,13 @@ Nous allons installer un cluster Cassandra à 6 nœuds et 2 Datacenter sur un en
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/crystalloide/Cassandra-SSTables
 )
 
-### 1°)	Lancement du cluster :
+### 1a°) Lancement du cluster (option 1) :
 
     docker compose up -d
+
+### 1b°) Lancement du cluster (option 2) :
+
+    docker compose up -f docker-compose-01-06.yml    
 
 ###	2°) Pour lister l'image récupérée  :
 
