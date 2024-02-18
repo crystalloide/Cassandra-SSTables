@@ -32,9 +32,9 @@ services:
     depends_on:
       cassandra11:
         condition: service_healthy
-    container_name: cassandra:4.1
+    image: cassandra:4.1
+    container_name: cassandra12
     hostname: cassandra12
-    name: cassandra12
     mem_limit: 1g
     cpus: 0.5
     restart: always    
@@ -63,8 +63,8 @@ services:
     depends_on:
       cassandra12:
         condition: service_healthy
-    container_name: cassandra:4.1
-    name: cassandra13
+    image: cassandra:4.1
+    container_name: cassandra13
     hostname: cassandra13
     mem_limit: 1g
     cpus: 0.5
@@ -94,8 +94,8 @@ services:
     depends_on:
       cassandra13:
         condition: service_healthy  
-    container_name: cassandra:4.1
-    name: cassandra21
+    image: cassandra:4.1
+    container_name: cassandra21
     hostname: cassandra21
     mem_limit: 1g
     cpus: 0.5
