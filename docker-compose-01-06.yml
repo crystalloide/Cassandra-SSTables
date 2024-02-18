@@ -27,7 +27,7 @@ services:
       - "9042:9042"
     healthcheck:
       #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
-      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "cassandra11", "9042" ]  
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces" ]  
       #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
       interval: 5s
       timeout: 5s
@@ -62,7 +62,7 @@ services:
       - "9043:9043"
     healthcheck:
       #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
-      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "cassandra12", "9043" ]  
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces" ]  
       #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
       interval: 5s
       timeout: 5s
@@ -97,7 +97,7 @@ services:
       - "9044:9044"
     healthcheck:
       #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
-      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "cassandra13", "9044" ] 
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces" ]  
       #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
       interval: 5s
       timeout: 5s
@@ -132,7 +132,7 @@ services:
       - "9045:9045"
     healthcheck:
       #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
-      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "cassandra14", "9045" ] 
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces" ]  
       #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
       interval: 5s
       timeout: 5s
@@ -167,7 +167,7 @@ services:
       - "9046:9046"
     healthcheck:
       #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
-      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "cassandra15", "9046" ] 
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces" ]  
       #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
       interval: 5s
       timeout: 5s
@@ -202,7 +202,7 @@ services:
       - "9047:9047"
     healthcheck:
       #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
-      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "cassandra16", "9047" ]
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces" ]  
       #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
       interval: 5s
       timeout: 5s
