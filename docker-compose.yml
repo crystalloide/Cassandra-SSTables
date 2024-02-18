@@ -9,6 +9,9 @@ services:
     restart: always
     volumes:
       - cassandra11:/var/lib/cassandra
+      #- "/home/user/cassandra11:/etc/cassandra:rw" 
+      #- "d:\cassandra11_data:/var/lib/cassandra:rw"   
+      #- "/home/user/cassandra11/data:/var/lib/cassandra:rw"
     environment:
       - CASSANDRA_CLUSTER_NAME=formation
       - CASSANDRA_NUM_TOKENS=16  
