@@ -46,15 +46,24 @@ nodetool permet d'obtenir des statistiques sur le cluster, de voir les plages de
     docker exec -it cassandra11 nodetool status
 
 ### Affichage :
-    Datacenter: dc1
-    ===============
+
+    Datacenter: NORD
+    ================
     Status=Up/Down
     |/ State=Normal/Leaving/Joining/Moving
-    --  Address     Load        Tokens  Owns (effective)  Host ID                               Rack 
-    UN  172.18.0.6  75.19 KiB   16      59.3%             3d8f189c-ad47-4b1e-8ea8-c004c0cd95b5  rack1
-    UN  172.18.0.7  75.19 KiB   16      76.0%             f4539d5f-6e29-417a-b2c2-f59d72101120  rack2
-    UN  172.18.0.2  109.38 KiB  16      64.7%             e415bf87-8f58-41c3-b3be-ee800006a71c  rack0
-
+    --  Address     Load        Tokens  Owns (effective)  Host ID                               Rack       
+    UN  172.18.0.4  75.2 KiB    16      31.9%             6ee78c05-ae68-4d93-9d35-f1ff01d9d33a  WINTERFELL2
+    UN  172.18.0.6  70.22 KiB   16      36.2%             280a0c64-2395-47cc-a7ef-6cca5671e19b  WINTERFELL3
+    UN  172.18.0.2  109.4 KiB   16      34.3%             aa63cc52-bb33-4d9d-a6b5-0661b7555424  WINTERFELL1
+    
+    Datacenter: TERRES-DE-LA-COURONNE
+    =================================
+    Status=Up/Down
+    |/ State=Normal/Leaving/Joining/Moving
+    --  Address     Load        Tokens  Owns (effective)  Host ID                               Rack       
+    UN  172.18.0.7  104.27 KiB  16      35.5%             ec134c10-62fe-4282-b05c-e0a0bffff722  PORT-REAL3 
+    UN  172.18.0.3  75.27 KiB   16      32.0%             cfe4af2b-6886-470b-be26-afb1e5a564d8  PORT-REAL1 
+    UN  172.18.0.5  70.25 KiB   16      30.2%             3e710059-131e-43d6-a0f2-919d423ae1cc  PORT-REAL2 
 
 ### 8°) Pour vérifier le bon démarrage du service cassandra sur un noeud : 
 
