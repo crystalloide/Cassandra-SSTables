@@ -13,7 +13,7 @@ services:
       #- "d:\cassandra01_data:/var/lib/cassandra:rw"   
       #- "/home/user/cassandra11/data:/var/lib/cassandra:rw"
     environment:
-      - CASSANDRA_CLUSTER_NAME=Cluster_Formation
+      - CASSANDRA_CLUSTER_NAME=ClusterFormation
       - CASSANDRA_NUM_TOKENS=16   
       - CASSANDRA_SEEDS=cassandra11,cassandra12
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
@@ -48,7 +48,7 @@ services:
       - cassandra12:/var/lib/cassandra
       #- "/home/user/cassandra12/data:/var/lib/cassandra:rw"
     environment:
-      - CASSANDRA_CLUSTER_NAME=Cluster_Formation
+      - CASSANDRA_CLUSTER_NAME=ClusterFormation
       - CASSANDRA_NUM_TOKENS=16   
       - CASSANDRA_SEEDS=cassandra11,cassandra12
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
@@ -83,7 +83,7 @@ services:
       - cassandra13:/var/lib/cassandra
       #- "/home/user/cassandra13/data:/var/lib/cassandra:rw"
     environment:
-      - CASSANDRA_CLUSTER_NAME=Cluster_Formation
+      - CASSANDRA_CLUSTER_NAME=ClusterFormation
       - CASSANDRA_NUM_TOKENS=16   
       - CASSANDRA_SEEDS=cassandra11,cassandra12
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
@@ -118,7 +118,7 @@ services:
       - cassandra14:/var/lib/cassandra
       #- "/home/user/cassandra14/data:/var/lib/cassandra:rw"
     environment:
-      - CASSANDRA_CLUSTER_NAME=Cluster_Formation
+      - CASSANDRA_CLUSTER_NAME=ClusterFormation
       - CASSANDRA_NUM_TOKENS=16   
       - CASSANDRA_SEEDS=cassandra11,cassandra12
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
@@ -153,7 +153,7 @@ services:
       - cassandra15:/var/lib/cassandra
       #- "/home/user/cassandra15/data:/var/lib/cassandra:rw"
     environment:
-      - CASSANDRA_CLUSTER_NAME=Cluster_Formation
+      - CASSANDRA_CLUSTER_NAME=ClusterFormation
       - CASSANDRA_NUM_TOKENS=16   
       - CASSANDRA_SEEDS=cassandra11,cassandra12
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
@@ -188,7 +188,7 @@ services:
       - cassandra16:/var/lib/cassandra
       #- "/home/user/cassandra16/data:/var/lib/cassandra:rw"
     environment:
-      - CASSANDRA_CLUSTER_NAME=Cluster_Formation
+      - CASSANDRA_CLUSTER_NAME=ClusterFormation
       - CASSANDRA_NUM_TOKENS=16   
       - CASSANDRA_SEEDS=cassandra11,cassandra12
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
