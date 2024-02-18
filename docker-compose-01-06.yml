@@ -1,21 +1,21 @@
 version: "3.8"
 services:
-  cassandra01:
+  cassandra11:
     image: cassandra:4.1
-    container_name: cassandra01
-    hostname: cassandra01
+    container_name: cassandra11
+    hostname: cassandra11
     mem_limit: 1g
     #cpus: 1.0
     restart: always
     volumes:
-      - cassandra01:/var/lib/cassandra      
-      #- "/home/user/cassandra01:/etc/cassandra:rw" 
+      - cassandra11:/var/lib/cassandra      
+      #- "/home/user/cassandra11:/etc/cassandra:rw" 
       #- "d:\cassandra01_data:/var/lib/cassandra:rw"   
-      #- "/home/user/cassandra01/data:/var/lib/cassandra:rw"
+      #- "/home/user/cassandra11/data:/var/lib/cassandra:rw"
     environment:
       - CASSANDRA_CLUSTER_NAME=Cluster_Formation
       - CASSANDRA_NUM_TOKENS=16   
-      - CASSANDRA_SEEDS=cassandra01,cassandra02
+      - CASSANDRA_SEEDS=cassandra11,cassandra12
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
       - CASSANDRA_DC=NORD
       - CASSANDRA_RACK=WINTERFELL1
@@ -34,23 +34,23 @@ services:
       retries: 60
       #start_period: 60s
 
-  cassandra02:
+  cassandra12:
     depends_on:
-      cassandra01:
+      cassandra11:
         condition: service_healthy
     image: cassandra:4.1
-    container_name: cassandra02
-    hostname: cassandra02
+    container_name: cassandra12
+    hostname: cassandra12
     mem_limit: 1g
     #cpus: 1.0
     restart: always
     volumes:
-      - cassandra02:/var/lib/cassandra
-      #- "/home/user/cassandra02/data:/var/lib/cassandra:rw"
+      - cassandra12:/var/lib/cassandra
+      #- "/home/user/cassandra12/data:/var/lib/cassandra:rw"
     environment:
       - CASSANDRA_CLUSTER_NAME=Cluster_Formation
       - CASSANDRA_NUM_TOKENS=16   
-      - CASSANDRA_SEEDS=cassandra01,cassandra02
+      - CASSANDRA_SEEDS=cassandra11,cassandra12
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
       - CASSANDRA_DC=TERRES-DE-LA-COURONNE
       - CASSANDRA_RACK=PORT-REAL1
@@ -69,23 +69,23 @@ services:
       retries: 60
       #start_period: 60s
 
-  cassandra03:
+  cassandra13:
     depends_on:
-      cassandra02:
+      cassandra12:
         condition: service_healthy
     image: cassandra:4.1
-    container_name: cassandra03
-    hostname: cassandra03
+    container_name: cassandra13
+    hostname: cassandra13
     mem_limit: 1g
     #cpus: 1.0
     restart: always
     volumes:
-      - cassandra03:/var/lib/cassandra
-      #- "/home/user/cassandra03/data:/var/lib/cassandra:rw"
+      - cassandra13:/var/lib/cassandra
+      #- "/home/user/cassandra13/data:/var/lib/cassandra:rw"
     environment:
       - CASSANDRA_CLUSTER_NAME=Cluster_Formation
       - CASSANDRA_NUM_TOKENS=16   
-      - CASSANDRA_SEEDS=cassandra01,cassandra02
+      - CASSANDRA_SEEDS=cassandra11,cassandra12
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
       - CASSANDRA_DC=NORD
       - CASSANDRA_RACK=WINTERFELL2
@@ -104,23 +104,23 @@ services:
       retries: 60
       #start_period: 60s
 
-  cassandra04:
+  cassandra14:
     depends_on:
-      cassandra03:
+      cassandra13:
         condition: service_healthy
     image: cassandra:4.1
-    container_name: cassandra04
-    hostname: cassandra04
+    container_name: cassandra14
+    hostname: cassandra14
     mem_limit: 1g
     #cpus: 1.0
     restart: always
     volumes:
-      - cassandra04:/var/lib/cassandra
-      #- "/home/user/cassandra04/data:/var/lib/cassandra:rw"
+      - cassandra14:/var/lib/cassandra
+      #- "/home/user/cassandra14/data:/var/lib/cassandra:rw"
     environment:
       - CASSANDRA_CLUSTER_NAME=Cluster_Formation
       - CASSANDRA_NUM_TOKENS=16   
-      - CASSANDRA_SEEDS=cassandra01,cassandra02
+      - CASSANDRA_SEEDS=cassandra11,cassandra12
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
       - CASSANDRA_DC=TERRES-DE-LA-COURONNE
       - CASSANDRA_RACK=PORT-REAL2
@@ -139,23 +139,23 @@ services:
       retries: 60
       #start_period: 60s
 
-  cassandra05:
+  cassandra15:
     depends_on:
-      cassandra04:
+      cassandra14:
         condition: service_healthy
     image: cassandra:4.1
-    container_name: cassandra05
-    hostname: cassandra05
+    container_name: cassandra15
+    hostname: cassandra15
     mem_limit: 1g
     #cpus: 1.0
     restart: always
     volumes:
-      - cassandra05:/var/lib/cassandra
-      #- "/home/user/cassandra05/data:/var/lib/cassandra:rw"
+      - cassandra15:/var/lib/cassandra
+      #- "/home/user/cassandra15/data:/var/lib/cassandra:rw"
     environment:
       - CASSANDRA_CLUSTER_NAME=Cluster_Formation
       - CASSANDRA_NUM_TOKENS=16   
-      - CASSANDRA_SEEDS=cassandra01,cassandra02
+      - CASSANDRA_SEEDS=cassandra11,cassandra12
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
       - CASSANDRA_DC=NORD
       - CASSANDRA_RACK=WINTERFELL3
@@ -174,23 +174,23 @@ services:
       retries: 60
       #start_period: 60s
 
-  cassandra06:
+  cassandra16:
     depends_on:
-      cassandra05:
+      cassandra15:
         condition: service_healthy
     image: cassandra:4.1
-    container_name: cassandra06
-    hostname: cassandra06
+    container_name: cassandra16
+    hostname: cassandra16
     mem_limit: 1g
     #cpus: 1.0
     restart: always
     volumes:
-      - cassandra06:/var/lib/cassandra
-      #- "/home/user/cassandra06/data:/var/lib/cassandra:rw"
+      - cassandra16:/var/lib/cassandra
+      #- "/home/user/cassandra16/data:/var/lib/cassandra:rw"
     environment:
       - CASSANDRA_CLUSTER_NAME=Cluster_Formation
       - CASSANDRA_NUM_TOKENS=16   
-      - CASSANDRA_SEEDS=cassandra01,cassandra02
+      - CASSANDRA_SEEDS=cassandra11,cassandra12
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
       - CASSANDRA_DC=TERRES-DE-LA-COURONNE
       - CASSANDRA_RACK=PORT-REAL3
@@ -210,9 +210,9 @@ services:
       #start_period: 60s
 
 volumes:
-  cassandra01:
-  cassandra02:
-  cassandra03:
-  cassandra04:
-  cassandra05:
-  cassandra06:
+  cassandra11:
+  cassandra12:
+  cassandra13:
+  cassandra14:
+  cassandra15:
+  cassandra16:
