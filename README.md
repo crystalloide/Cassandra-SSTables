@@ -139,6 +139,13 @@ nodetool permet d'obtenir des statistiques sur le cluster, de voir les plages de
   
 - Noter : GossipingPropertyFileSnitch
 
+
+
+-  On affiche l'emplacement des binaires dans le conteneur cassandra :  
+
+       cd /opt/cassandra/bin 
+       ls
+
 On pense à sortir du conteneur : 
 
     exit
