@@ -27,7 +27,7 @@ services:
       - "9042:9042"
     healthcheck:
       #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
-      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9042" ]  
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "cassandra11", "9042" ]  
       #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
       interval: 5s
       timeout: 5s
@@ -55,14 +55,14 @@ services:
       - CASSANDRA_DC=NORD
       - CASSANDRA_RACK=WINTERFELL2
       - CASSANDRA_BROADCAST_RPC_ADDRESS=127.0.0.1
-      - CASSANDRA_NATIVE_TRANSPORT_PORT=9043
+      - CASSANDRA_NATIVE_TRANSPORT_PORT=9042
       - MAX_HEAP_SIZE=256m
       - HEAP_NEWSIZE=50m  
     ports:
-      - "9043:9043"
+      - "9043:9042"
     healthcheck:
       #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
-      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9043" ]  
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "cassandra12", "9042" ]  
       #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
       interval: 5s
       timeout: 5s
@@ -90,14 +90,14 @@ services:
       - CASSANDRA_DC=NORD
       - CASSANDRA_RACK=WINTERFELL3
       - CASSANDRA_BROADCAST_RPC_ADDRESS=127.0.0.1
-      - CASSANDRA_NATIVE_TRANSPORT_PORT=9044
+      - CASSANDRA_NATIVE_TRANSPORT_PORT=9042
       - MAX_HEAP_SIZE=256m
       - HEAP_NEWSIZE=50m  
     ports:
-      - "9044:9044"
+      - "9044:9042"
     healthcheck:
       #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
-      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9044" ]  
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "cassandra13", "9042" ]  
       #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
       interval: 5s
       timeout: 5s
@@ -125,14 +125,14 @@ services:
       - CASSANDRA_DC=TERRES-DE-LA-COURONNE
       - CASSANDRA_RACK=PORT-REAL1
       - CASSANDRA_BROADCAST_RPC_ADDRESS=127.0.0.1
-      - CASSANDRA_NATIVE_TRANSPORT_PORT=9045
+      - CASSANDRA_NATIVE_TRANSPORT_PORT=9042
       - MAX_HEAP_SIZE=256m
       - HEAP_NEWSIZE=50m  
     ports:
-      - "9045:9045"
+      - "9045:9042"
     healthcheck:
       #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
-      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9045" ]  
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "cassandra21", "9042" ]  
       #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
       interval: 5s
       timeout: 5s
@@ -160,14 +160,14 @@ services:
       - CASSANDRA_DC=TERRES-DE-LA-COURONNE
       - CASSANDRA_RACK=PORT-REAL2
       - CASSANDRA_BROADCAST_RPC_ADDRESS=127.0.0.1
-      - CASSANDRA_NATIVE_TRANSPORT_PORT=9046
+      - CASSANDRA_NATIVE_TRANSPORT_PORT=9042
       - MAX_HEAP_SIZE=256m
       - HEAP_NEWSIZE=50m  
     ports:
-      - "9046:9046"
+      - "9046:9042"
     healthcheck:
       #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
-      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9046" ]  
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "cassandra22", "9042" ]   
       #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
       interval: 5s
       timeout: 5s
@@ -195,14 +195,14 @@ services:
       - CASSANDRA_DC=TERRES-DE-LA-COURONNE
       - CASSANDRA_RACK=PORT-REAL3
       - CASSANDRA_BROADCAST_RPC_ADDRESS=127.0.0.1
-      - CASSANDRA_NATIVE_TRANSPORT_PORT=9047
+      - CASSANDRA_NATIVE_TRANSPORT_PORT=9042
       - MAX_HEAP_SIZE=256m
       - HEAP_NEWSIZE=50m  
     ports:
-      - "9047:9047"
+      - "9047:9042"
     healthcheck:
       #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
-      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9047" ]  
+      test: ["CMD", "cqlsh", "-e", "describe keyspaces", "cassandra23", "9042" ]    
       #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
       interval: 5s
       timeout: 5s
