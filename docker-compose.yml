@@ -11,6 +11,7 @@ services:
       - cassandra11:/var/lib/cassandra
     environment:
       - CASSANDRA_CLUSTER_NAME=formation
+      - CASSANDRA_NUM_TOKENS=16  
       - CASSANDRA_SEEDS=cassandra11,cassandra21
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
       - CASSANDRA_DC=Nord
@@ -42,6 +43,7 @@ services:
       - cassandra12:/var/lib/cassandra
     environment:
       - CASSANDRA_CLUSTER_NAME=formation
+      - CASSANDRA_NUM_TOKENS=16  
       - CASSANDRA_SEEDS=cassandra11,cassandra21
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
       - CASSANDRA_DC=Nord
@@ -73,6 +75,7 @@ services:
       - cassandra13:/var/lib/cassandra
     environment:
       - CASSANDRA_CLUSTER_NAME=formation
+      - CASSANDRA_NUM_TOKENS=16  
       - CASSANDRA_SEEDS=cassandra11,cassandra21
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
       - CASSANDRA_DC=Nord
@@ -104,6 +107,7 @@ services:
       - cassandra21:/var/lib/cassandra
     environment:
       - CASSANDRA_CLUSTER_NAME=formation
+      - CASSANDRA_NUM_TOKENS=16  
       - CASSANDRA_SEEDS=cassandra11,cassandra21
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
       - CASSANDRA_DC=Terres-de-la-Couronne
@@ -135,6 +139,7 @@ services:
       - cassandra22:/var/lib/cassandra
     environment:
       - CASSANDRA_CLUSTER_NAME=formation
+      - CASSANDRA_NUM_TOKENS=16  
       - CASSANDRA_SEEDS=cassandra11,cassandra21
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
       - CASSANDRA_DC=Terres-de-la-Couronne
@@ -166,6 +171,7 @@ services:
       - cassandra23:/var/lib/cassandra
     environment:
       - CASSANDRA_CLUSTER_NAME=formation
+      - CASSANDRA_NUM_TOKENS=16  
       - CASSANDRA_SEEDS=cassandra11,cassandra21
       - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
       - CASSANDRA_DC=Terres-de-la-Couronne
