@@ -146,6 +146,10 @@ nodetool permet d'obtenir des statistiques sur le cluster, de voir les plages de
        cd /opt/cassandra/bin 
        ls
 
+### Affichage : 
+
+    cassandra  cassandra.in.sh  cqlsh  cqlsh.py  debug-cql  nodetool  sstableloader  sstablescrub  sstableupgrade  sstableutil  sstableverify  stop-server
+
 On pense à sortir du conteneur : 
 
     exit
