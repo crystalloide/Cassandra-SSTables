@@ -29,9 +29,9 @@ services:
       #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
       test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9042" ]  
       #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
-      interval: 10s
+      interval: 5s
       timeout: 5s
-      retries: 5
+      retries: 60
       #start_period: 60s
 
   cassandra12:
@@ -63,9 +63,9 @@ services:
       #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
       test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9043" ]  
       #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
-      interval: 10s
+      interval: 5s
       timeout: 5s
-      retries: 5
+      retries: 60
       #start_period: 60s
 
   cassandra13:
@@ -97,9 +97,9 @@ services:
       #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
       test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9044" ]  
       #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
-      interval: 10s
+      interval: 5s
       timeout: 5s
-      retries: 5
+      retries: 60
       #start_period: 60s
 
   cassandra21:
@@ -131,9 +131,9 @@ services:
       #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
       test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9045" ]  
       #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
-      interval: 10s
+      interval: 5s
       timeout: 5s
-      retries: 5
+      retries: 60
       #start_period: 60s
 
   cassandra22:
@@ -165,9 +165,9 @@ services:
       #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
       test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9046" ]  
       #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
-      interval: 10s
+      interval: 5s
       timeout: 5s
-      retries: 5
+      retries: 60
       #start_period: 60s
 
   cassandra23:
@@ -199,9 +199,9 @@ services:
       #test: ["CMD", "nc", "-z", "127.0.0.1", "9042"]
       test: ["CMD", "cqlsh", "-e", "describe keyspaces", "127.0.0.1", "9047" ]  
       #test: ["CMD-SHELL", "[ $$(nodetool -h 127.0.0.1 -pw cassandra -u cassandra statusgossip) = running ]"]
-      interval: 10s
+      interval: 5s
       timeout: 5s
-      retries: 5
+      retries: 60
       #start_period: 60s
 
 volumes:
