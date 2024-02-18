@@ -28,7 +28,7 @@ Nous allons installer un cluster Cassandra à 6 nœuds et 2 Datacenter sur un en
 
 ### 5°) Affichage des logs d'un des conteneurs en cours d'exécution : 
 
-    docker logs cassandra-cluster_6_noeuds_2_dc-gitpod-cassandra11-1
+    docker logs cassandra11
 
 ### 6°) Surveillance d'un cluster Cassandra dans Docker :
 
@@ -39,7 +39,7 @@ nodetool permet d'obtenir des statistiques sur le cluster, de voir les plages de
 (ex. : déplacement de données d'un nœud à un autre, la mise hors service de nœuds, la réparation de nœuds, etc.)
 
 ### 7°) Utilisation de nodetool : On peut utiliser la commande "nodetool status" sur n'importe lequel des nœuds pour voir l'état des nœuds du cluster :
-    docker exec -it cassandra-cluster_6_noeuds_2_dc-gitpod-cassandra11-1 nodetool status
+    docker exec -it cassandra11 nodetool status
 
 ### Affichage :
     Datacenter: dc1
@@ -54,7 +54,7 @@ nodetool permet d'obtenir des statistiques sur le cluster, de voir les plages de
 
 ### 8°) Pour vérifier le bon démarrage du service cassandra sur un noeud : 
 
-    docker logs cassandra-cluster_6_noeuds_2_dc-gitpod-cassandra22-1 | grep 'jump'
+    docker logs cassandra22 | grep 'jump'
 
 ### 9°) Affichage des services en cours d'écoute sur les ports 904* :	
 
@@ -68,7 +68,7 @@ nodetool permet d'obtenir des statistiques sur le cluster, de voir les plages de
 
 
 ### 10°) La commandes "nodetool info" apporte des informations complémentaires :
-    docker exec -it cassandra-cluster_6_noeuds_2_dc-gitpod-cassandra11-1 nodetool info
+    docker exec -it cassandra11 nodetool info
 
 
 ### Affichage :
@@ -94,7 +94,7 @@ nodetool permet d'obtenir des statistiques sur le cluster, de voir les plages de
 
 ### 11°) Connection sur un conteneur en bash : 
 
-    docker exec -it cassandra-cluster_6_noeuds_2_dc-gitpod-cassandra11-1 bash
+    docker exec -it cassandra11 bash
 
 ### 12°) Et on navigue : 
 
@@ -132,7 +132,7 @@ On pense à sortir du conteneur :
 
 ### 13°) Pour afficher les détails sur la réportition des ranges de tokens dans le ring , on utilise "nodetool ring" : 
 
-    docker exec -it cassandra-cluster_6_noeuds_2_dc-gitpod-cassandra11-1 nodetool ring
+    docker exec -it cassandra11 nodetool ring
 
 ### Affichage : 
     Datacenter: dc1
@@ -153,7 +153,7 @@ On pense à sortir du conteneur :
 
 ## 14°) Utilisation du client CQL en ligne de commande : cqlsh  
 
-    docker exec -it cassandra-cluster_6_noeuds_2_dc-gitpod-cassandra11-1 cqlsh
+    docker exec -it cassandra11 cqlsh
 
 ### Affichage : 
 
@@ -177,7 +177,6 @@ On pense à sortir du conteneur :
 ### Affichage : 
 
     cqlsh> EXIT
-    gitpod /workspace/cassandra-cluster_6_noeuds_2_dc-gitpod-cassandra11-1 (main) $ 
 
 
 ## 17°) Pour arrêter le cluster :
