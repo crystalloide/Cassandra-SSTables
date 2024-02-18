@@ -5,7 +5,7 @@ services:
     container_name: cassandra11
     hostname: cassandra11
     mem_limit: 1g
-    cpus: 0.5
+    cpus: 1.0
     restart: always
     volumes:
       - cassandra11:/var/lib/cassandra
@@ -36,7 +36,7 @@ services:
     container_name: cassandra12
     hostname: cassandra12
     mem_limit: 1g
-    cpus: 0.5
+    cpus: 1.0
     restart: always    
     volumes:    
       - cassandra12:/var/lib/cassandra
@@ -67,7 +67,7 @@ services:
     container_name: cassandra13
     hostname: cassandra13
     mem_limit: 1g
-    cpus: 0.5
+    cpus: 1.0
     restart: always
     volumes:
       - cassandra13:/var/lib/cassandra
@@ -98,7 +98,7 @@ services:
     container_name: cassandra21
     hostname: cassandra21
     mem_limit: 1g
-    cpus: 0.5
+    cpus: 1.0
     restart: always
     volumes:
       - cassandra21:/var/lib/cassandra
@@ -129,7 +129,7 @@ services:
     container_name: cassandra22
     hostname: cassandra22
     mem_limit: 1g
-    cpus: 0.5
+    cpus: 1.0
     restart: always
     volumes:
       - cassandra22:/var/lib/cassandra
@@ -160,7 +160,7 @@ services:
     container_name: cassandra23
     hostname: cassandra23
     mem_limit: 1g
-    cpus: 0.5
+    cpus: 1.0
     restart: always
     volumes:
       - cassandra23:/var/lib/cassandra
