@@ -2,6 +2,7 @@ version: "3.8"
 services:
   cassandra11:
     image: cassandra:4.1
+    name: cassandra11
     hostname: cassandra11
     mem_limit: 1g
     cpus: 0.5
@@ -33,6 +34,7 @@ services:
         condition: service_healthy
     image: cassandra:4.1
     hostname: cassandra12
+    name: cassandra12
     mem_limit: 1g
     cpus: 0.5
     restart: always    
@@ -62,6 +64,7 @@ services:
       cassandra12:
         condition: service_healthy
     image: cassandra:4.1
+    name: cassandra13
     hostname: cassandra13
     mem_limit: 1g
     cpus: 0.5
@@ -92,6 +95,7 @@ services:
       cassandra13:
         condition: service_healthy  
     image: cassandra:4.1
+    name: cassandra21
     hostname: cassandra21
     mem_limit: 1g
     cpus: 0.5
@@ -122,6 +126,7 @@ services:
       cassandra21:
         condition: service_healthy  
     image: cassandra:4.1
+    name: cassandra22
     hostname: cassandra22
     mem_limit: 1g
     cpus: 0.5
@@ -152,6 +157,7 @@ services:
       cassandra22:
         condition: service_healthy  
     image: cassandra:4.1
+    name: cassandra23
     hostname: cassandra23
     mem_limit: 1g
     cpus: 0.5
