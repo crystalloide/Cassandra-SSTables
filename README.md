@@ -9,18 +9,8 @@ Notre cluster de démonstration contient 6 noeuds en tout :
 
 Nous allons installer un cluster Cassandra à 6 nœuds et 2 Datacenter sur un environnement virtuel accessible à partir d'un simple navigateur web, à des fins de développement et de formation. 
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/crystalloide/Cassandra-Cluster_6_noeuds_2_DC-Gitpod
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/crystalloide/Cassandra-SSTables
 )
-
-### 0°) Pré-requis (déjà fait ici)  :
-
-  Sur une VM ou machine sans installation préalable, oOn aurait dû installer Docker et Docker Compose : 
-  
-  On aurait suivi les instructions d’installation ici : https://docs.docker.com/compose/install
-
-  Puis on aurait récupéré le fichier docker-compose.yml :  [docker-compose.yml](https://github.com/crystalloide/Cassandra-Cluster_6_noeuds_2_DC-Gitpod/blob/main/docker-compose.yml)  
-  
-      curl -O https://github.com/crystalloide/Cassandra-Cluster_6_noeuds_2_DC-Gitpod/blob/82d81861de3040b262d8b5c265cf80283e40c7c9/docker-compose.yml
 
 ### 1°)	Lancement du cluster :
 
